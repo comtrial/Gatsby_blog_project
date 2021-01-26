@@ -1,6 +1,6 @@
 module.exports = {
   /** Site MetaData (Required all)*/
-  title: `susan's blog`,                           // (* Required)
+  title: `susan blog`,                           // (* Required)
   description: `기록을 남기고 뭐 거창한 이것 저것 적고 이게 좀 컷으면 좋겠는데 `,          // (* Required)
   author: `Author`,                         // (* Required)
   language: 'ko-KR',                        // (* Required) html lang, ex. 'en' | 'en-US' | 'ko' | 'ko-KR' | ...

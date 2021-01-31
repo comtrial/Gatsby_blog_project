@@ -14,7 +14,7 @@ module.exports = {
     // If the file does not exist, it is replaced by a random image.
 
   /** Home > Bio information*/
-  comment: 'Enter your information in the "./config.js" file. ',
+  comment: '기록을 남기고 뭐 거창한 이것 저것을 짜고 이게 좀 되었으면 젛겠당 ',
   name: 'User Name',
   company: '',
   location: 'Korea',

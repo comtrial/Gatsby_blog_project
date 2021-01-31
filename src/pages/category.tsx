@@ -6,8 +6,9 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
-import './styles/tags.scss';
+import './styles/category.scss';
 import PostList from '../components/PostList';
+import CategoryPage from '../components/Category';
 
 interface TagsPageProps {
   data: any;
@@ -16,10 +17,13 @@ interface TagsPageProps {
 const Tags = (props: TagsPageProps) => {
   const { data } = props;
   const { group } = data.allMarkdownRemark;
+
+  console.log(data)
   const [largeCount, setLargeCount] = useState(0);
   const [targetTag, setTargetTag] = useState<string | undefined>();
   const [currentPostList, setCurrentPostList] = useState([]);
   console.log(targetTag)
+
   interface groupItem {
     fieldValue: string;
     totalCount: number;
@@ -44,7 +48,7 @@ const Tags = (props: TagsPageProps) => {
     return (
       <li key={g.fieldValue}>
         <span
-          className="category-text"
+          className="tag-text"
           style={{
             fontSize: g.fieldValue !== 'undefined' ? getFontSize() : '0.9rem',
             opacity: g.fieldValue === targetTag ? '0.9' : '0.5',
@@ -87,12 +91,15 @@ const Tags = (props: TagsPageProps) => {
   return (
     <Layout>
       <SEO title="Tags" />
-        
-      <div id="tags">
+      {/* <CategoryPage posts={currentPostList.length ? currentPostList : []}></CategoryPage> */}
+      <div className="category">
         <div className="tag-list-wrap">
+          <div className="title">Category</div>
           <ul>{tagList}</ul>
         </div>
-
+      </div>
+      
+      <div id="tags">
         <PostList posts={currentPostList.length ? currentPostList : []} />
       </div>
     </Layout>
@@ -102,7 +109,7 @@ const Tags = (props: TagsPageProps) => {
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      group(field: frontmatter___tags) {
+      group(field: frontmatter___category) {
         fieldValue
         totalCount
         edges {

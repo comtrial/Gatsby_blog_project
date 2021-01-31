@@ -5,12 +5,16 @@ import { graphql, Link } from 'gatsby';
 import { FontAwesomeIcon as Fa } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
+import Intro from '../components/Intro';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import Bio from '../components/Bio';
 import './styles/index.scss';
 import PostList from '../components/PostList';
+import IntroPage from '../components/Intro';
+import CategoryPage from '../components/Category';
 
+import Img from "gatsby-image"
 interface IndexPageProps {
   path: string;
   data: any;
@@ -26,7 +30,10 @@ const IndexPage = (props: IndexPageProps) => {
       <SEO title={title} />
       <div className="index-wrap">
         <Bio />
+        <CategoryPage></CategoryPage>
         <div className="index-post-list-wrap">
+          <IntroPage></IntroPage>
+          
           <PostList posts={posts} />
           {posts.length < 100 ? null : (
             <div className="show-more-posts">
@@ -63,6 +70,7 @@ export const pageQuery = graphql`
             update(formatString: "MMM DD, YYYY")
             title
             tags
+            category
           }
         }
       }

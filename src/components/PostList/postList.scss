@@ -18,15 +18,18 @@
     flex-direction: column;
     max-width: inherit;
     margin: 6rem 1rem;
-    opacity: 0.85;
+    opacity: 0.75;
     transition: opacity 0.2s;
-
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 0.084rem solid #6A7380;
     @media screen and (max-width: $break-m) {
       margin: 4rem 1rem;
     }
 
     &:hover {
       opacity: 1;
+      border-bottom: 0.084rem solid #6A7380;
     }
 
     &.hide {
@@ -49,6 +52,7 @@
 
     .title {
       font-size: 1.3rem;
+      opacity: 0.8;
 
       @media screen and (max-width: $break-m) {
         font-size: 1.1rem;
@@ -56,6 +60,7 @@
     }
 
     .info {
+      opacity: 0.5;
       display: flex;
       font-size: 0.84rem;
       align-items: center;

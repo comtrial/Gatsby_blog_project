@@ -60,6 +60,19 @@ const Header = (props: headerPropsType) => {
   }, [isHide]);
 
   useEffect(() => {
+    const category: HTMLDivElement | null = document.querySelector('.category');
+    if (category) {
+      if (isHide === true) {
+        category.style.opacity = '0';
+        category.style.pointerEvents = 'none';
+      } else {
+        category.style.opacity = '1';
+        category.style.pointerEvents = 'all';
+      }
+    }
+  }, [isHide]);
+
+  useEffect(() => {
     const profile: HTMLImageElement | null = document.querySelector('.header-profile-image-wrap>img');
 
     const prevPath: string = path;

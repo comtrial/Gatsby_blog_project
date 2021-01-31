@@ -26,6 +26,18 @@ a:visited {
       display: none;
     }
   }
+  .category {
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    transition: opacity 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.1s;
+
+    @media screen and (max-width: $break-l) {
+      display: none;
+    }
+  }
 
   .index-post-list-wrap {
     width: 100%;

@@ -38,6 +38,7 @@ import SEO from '../components/seo';
 import { RootState } from '../state/reducer';
 import config from '../../_config';
 
+import Img from "gatsby-image"
 interface postProps {
   data: any;
   pageContext: { slug: string; series: any[]; lastmod: string };
@@ -370,6 +371,7 @@ export const pageQuery = graphql`
         tags
         keywords
         update(formatString: "MMM DD, YYYY")
+        category
       }
     }
   }

@@ -4,7 +4,6 @@ import * as React from 'react';
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import { Link } from 'gatsby';
 import { throttle } from 'lodash';
-
 import './postList.scss';
 
 interface PostListProps {
@@ -49,7 +48,7 @@ const PostList = (props: PostListProps) => {
       const { node } = post;
       const { excerpt, fields, frontmatter } = node;
       const { slug } = fields;
-      const { date, title, tags } = frontmatter;
+      const { date, title, tags, category} = frontmatter;
       let update = frontmatter.update;
       if (Number(update.split(',')[1]) === 1) update = null;
 
